@@ -26,3 +26,33 @@ class Solution {
         }
      }
 }
+
+
+//Optimal approach
+//In this approach, as we know that in right rotation we just move k elements from right and place them in front, there fore,
+//If we have array [1,2,3,4,5] and k is 2, then after reversing array will [5,4,3,2,1], now we will reverse elements till k-1, 
+//why because n - k = 5 - 2 = 3 which means from index 3 to index n-1 we have to shift elements in the front, but we have already reversed //the elements there for k -1, array become [4,5,3,2,1] now reverse from k to n-1 [4,5,1,2,3] hence array is roatated in place.
+
+class Solution{
+     public void rotate(int nums[], int k){
+	int n = nums.length;
+        while(k > n){
+            k -= n;
+        }
+
+        reverse(nums, 0, n-1);  // reversing whole array
+        reverse(nums, 0, k-1);  // reversing elements till k-1
+        reverse(nums, k, n-1);  // reversing remaining elements from k to n - 1
+     }
+
+     public void reverse(int arr[], int i, int j){ //i = startIndex, j = endIndex
+        int temp = 0;
+        while(i < j){
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+     }
+}
