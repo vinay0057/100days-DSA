@@ -1,0 +1,44 @@
+Problem - Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Note that you must do this in-place without making a copy of the array.
+
+Example 1:
+
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+Example 2:
+
+Input: nums = [0]
+Output: [0]
+
+
+Solution - 
+
+#Brute Force Approach -: I was thinking to use a new array to store the non-zero elements in that and then again copy all those elements of new array to the original or old array, but in the problem description we have a note therefore I tried below problem as brute fore, and it did worked with 1ms response time.
+
+#Optimal Approach
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int zeroCount = 0;
+        int n = nums.length;
+
+        for(int i=0; i<n; i++){
+            if(nums[i] == 0){
+                zeroCount++;
+            }
+        }
+
+        int numsIndx = 0;
+        for(int i=0; i<n; i++){
+            if(nums[i] != 0){
+                nums[numsIndx] = nums[i];
+                numsIndx++;
+            }
+        }
+
+        for(int i=n-zeroCount; i<n; i++){
+            nums[i] = 0;
+        }
+    }
+}
