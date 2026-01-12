@@ -1,5 +1,5 @@
 package MultiDimensionalArray;
-
+//In this code we are finding the row, as well as the max sum of that row
 public class MaxRowSum {
     public static void main(String[] args) {
         int arr[][] = {{121,45,92}, {54,32,11}, {83, 66, 19}};
