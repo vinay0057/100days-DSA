@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 public class RetrieveAndUpdateElementOf2DArrayList {
     public static void main(String[] args) {
+        //first we create a 2d array list of any type, like Integer, Character, etc.
         ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
 
+        //then to insert rows/arraylists we use new keyword in the add() method
         arr.add(new ArrayList<>());
         arr.get(0).add(1);
         arr.get(0).add(2);
@@ -31,7 +33,7 @@ public class RetrieveAndUpdateElementOf2DArrayList {
 
 
     }
-
+    //it is a method to print the array list in a matrix form
     public static void printArrayList(ArrayList<ArrayList<Integer>> arr){
         int rowsize = arr.size();
 
