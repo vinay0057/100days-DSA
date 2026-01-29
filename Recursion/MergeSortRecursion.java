@@ -14,7 +14,7 @@ public class MergeSortRecursion {
         //Step 1: create 2 empty arrays, of n/2 size each, (for odd n - n/2)
         int a[] = new int[n/2];
         int b[] = new int[n - n/2];
-        //Step 2: copy-  paste arr element in a and b
+        //Step 2: copy-paste arr element in a and b
         int idx = 0;
         for(int i=0; i<a.length; i++) a[i] = arr[idx++];
         for(int i=0; i<b.length; i++) b[i] = arr[idx++];
